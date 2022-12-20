@@ -1,21 +1,15 @@
 const express = require('express');
 const sequelize = require('./config/connection');
 const { User, Post, Comment } = require('./models');
+const routes = require('./controllers');
 
 const app = express();
 
 app.use(express.json());
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
-app.use('/api/users', async (req, res) => {
-   try {
-    const result = await User.create(req.body)
-    res.json(result)
-    } catch (error) {
-        res.json(error)
-    }
-});
+app.use(routes);
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
