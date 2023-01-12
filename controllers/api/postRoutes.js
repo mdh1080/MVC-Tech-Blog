@@ -1,57 +1,38 @@
 const router = require('express').Router();
 const { Post } = require('../../models');
+const withAuth = require('../../utils/auth');
 
-router.post('/', async (req, res) => {
-    try {
-        const comments = req.body.comments;
-        const newPost = await Post.create(req.body)
-        res.json({newPost, comments})
+router.post('/', withAuth, async (req, res) => {
+  try {
+    const newPost = await Post.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
 
-    }
-catch (err) {
-    res.json (err)
-}
+    res.status(200).json(newPost);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
-router.get('/', async (req, res) => {
-    try {
-        const Posts = await Post.findAll()
-        res.json({Posts})
-    }
-catch (err) {
-    res.json (err)
-}
-});
-router.put('/:id', async (req, res) => {
-    try {
-        const comments = req.body.comments;
-        const newPost = await Post.update(req.body, {
-            where: {
-                id: req.params.id
-                }
-                })
-        res.json({newPost, comments})
+router.delete('/:id', withAuth, async (req, res) => {
+  try {
+    const PostData = await Post.destroy({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
 
+    if (!postData) {
+      res.status(404).json({ message: '404 Post ID not found' });
+      return;
     }
-catch (err) {
-    res.json (err)
-}
-});
-router.delete('/:id', async (req, res) => {
-    try {
-        const comments = req.body.comments;
-        const newPost = await Post.destroy( {
-            where: {
-            id: req.params.id
-            }
-            })  
-       
-        res.json({newPost, comments})
 
-    }
-catch (err) {
-    res.json (err)
-}
+    res.status(200).json(postData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
