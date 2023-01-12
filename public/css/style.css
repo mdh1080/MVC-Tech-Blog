@@ -12,33 +12,33 @@ body {
     font-size: xx-large;
   }
   
-  .blogBox {
+  .postBox {
     margin-top: 8px;
     border-style: solid;
   }
   
-  .blogTitle {
+  .postTitle {
     text-decoration: none;
     color: darkkhaki;
   }
   
-  .blogDesc {
+  .postDesc {
     border-style: solid;
     margin-bottom: 5px;
     padding: 2px;
     background-color: rgb(113, 143, 62);
   }
   
-  .blogDescMain {
+  .postDescMain {
     font-weight: 700;
   }
   
-  .blogDescTwo {
+  .postDescTwo {
     font-size: 25px;
     font-style: italic;
   }
   
-  .blogCreate {
+  .postCreate {
     font-weight: bold;
     font-style: italic;
     font-size: 12px;
@@ -46,7 +46,7 @@ body {
     color: darkkhaki;
   }
   
-  .blogBoxCont {
+  .postBoxCont {
       margin-top: 10px;
     border-style: solid;
     background-color: rgb(113, 143, 62);
