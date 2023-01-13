@@ -20,6 +20,7 @@
   "homepage": "https://github.com/mdh1080/MVC-Tech-Blog#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "bootstrap": "^5.2.3",
     "connect": "^3.7.0",
     "connect-session-sequelize": "^7.1.5",
     "dotenv": "^16.0.3",
