@@ -4,10 +4,10 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
 	try {
-		const postData = await post.findAll({
+		const postData = await Post.findAll({
 			include: [{
 				model: User,
-				attributes: ['name'],
+				attributes: ['username'],
 			},],
 		});
 
@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 			plain: true
 		}));
 
-		res.render('dashboard', {
+		res.render('homepage', {
 			posts,
 			logged_in: req.session.logged_in
 		});
@@ -95,4 +95,3 @@ router.get('/signUp', (req, res) => {
 });
 
 module.exports = router;
-
