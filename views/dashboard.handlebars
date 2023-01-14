@@ -1,17 +1,18 @@
-<h1> {{title}} </h1>
-<p>Tech Blog</p>
+<div class="row">
+  <div class="col-auto">
+    <h2><span>~</span>Welcome, {{username}}!<span>~</span></h2>
+  </div>
+</div>
 
-{{#each posts as |post|}}
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a New post:</h3>
 
-  <div class="row">
-
-    <div class="container postBox">
-			<div class="row  justify-content-center headerRow">
-      <div class="col-8">
-        <h2>
-          <a class="postTitle text-uppercase" href="/post/{{post.id}}">{{post.title}}</a>
-        </h2>
+    <form class="form new-post-form">
+      <div class="form-group">
+        <input class="form-input" type="text" id="post-title" name="post-title" placeholder="post Title" />
       </div>
+<<<<<<< HEAD
 
       <div class="col-4">
         <p class="postCreate text-right">Created by
@@ -19,15 +20,34 @@
           on
           {{format_date post.date_created}}
         </p>
+=======
+      
+      <div class="form-group">
+        <textarea class="form-input" id="post-desc" name="post-desc" placeholder="post Content"></textarea>
+>>>>>>> feed973433fcce4319053ed012c119d65b75a3b4
       </div>
-			</div>
-    <div class="postDesc">
-      <p class="text-center postDescMain">
-        {{post.description}}
-      </p>
-    </div>
-    </div>
-
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
   </div>
 
-{{/each}}
+  {{#if posts.length}}
+  <div class="col-md-6 post-list">
+    <h3>Current posts:</h3>
+
+    {{#each posts as |post|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-danger" data-id="{{post.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="/js/dashboard.js"></script>
