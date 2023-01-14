@@ -29,33 +29,6 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 
-// app.engine('handlebars' , exphbs.engine({
-//   defaultLayout: 'homepage',
-//   layoutsDir: __dirname + '/views/layouts',
-// }));
-
-// app.set('view engine', 'handlebars');
-
-// app.get ('/', (req, res, next) => {
-//   res.render('homepage', {layout: 'main'});
-// });
-
-// app.get ('/login', (req, res) => {
-//   res.render('login', {layout: 'main'});
-// });
-
-// app.get ('/signup', (req, res) => {
-//   res.render('signup', {layout: 'main'});
-// });
-
-// app.get ('/dashboard', (req, res) => {
-//   res.render('dashboard', {layout: 'main'});
-// });
-
-// app.get ('/post', (req, res) => {
-//   res.render('post', {layout: 'main'});
-// });
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
