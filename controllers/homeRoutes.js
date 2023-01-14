@@ -34,8 +34,8 @@ router.get('/post/:id', async (req, res) => {
 				}, {
 					model: Comment,
 					include: [
-						User
-					]
+						'user_id'
+					],
 				}
 			],
 		});
@@ -60,7 +60,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 				exclude: ['password']
 			},
 			include: [{
-				model: post
+				model: Post
 			}],
 		});
 

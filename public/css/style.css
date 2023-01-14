@@ -19,14 +19,14 @@ body {
   
   .postTitle {
     text-decoration: none;
-    color: darkkhaki;
+    color: rgb(141, 171, 192);
   }
   
   .postDesc {
     border-style: solid;
     margin-bottom: 5px;
     padding: 2px;
-    background-color: rgb(113, 143, 62);
+    background-color: rgb(212, 222, 243);
   }
   
   .postDescMain {
@@ -43,13 +43,13 @@ body {
     font-style: italic;
     font-size: 12px;
     padding: 5px;
-    color: darkkhaki;
+    color:  rgb(141, 171, 192);
   }
   
   .postBoxCont {
       margin-top: 10px;
     border-style: solid;
-    background-color: rgb(113, 143, 62);
+    background-color:  rgb(141, 171, 192);
   }
   
   .formCont {
@@ -65,7 +65,7 @@ body {
     margin-right: auto;
     margin-top: 10px;
     max-width: 75%;
-    background-color: rgb(113, 143, 62);
+    background-color:  rgb(141, 171, 192));
   }
   
   .commentOwner {
@@ -79,7 +79,7 @@ body {
   .commentText {
     font-weight: bold;
     padding-top: 10px;
-    background-color: rgb(113, 143, 62);
+    background-color:  rgb(141, 171, 192);
   }
   
   .commentCont {
@@ -93,9 +93,6 @@ body {
   
   a:link {
     color: rgb(29, 200, 23);
-  }
-  a:visited {
-    color: rgb(182, 179, 41);
   }
   
   a:hover {
