@@ -30,6 +30,7 @@ router.post('/', async (req, res) => {
       ...req.body,
       user_id: req.session.user_id,
     });
+    console.log(newComment);
     res.json(newComment);
   } catch (err) {
     res.status(500).json(err);
